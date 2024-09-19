@@ -1,4 +1,4 @@
-import { Header, Sidebar } from "@/Components";
+import { Header, Sidebar } from "@/localComponents";
 
 const Root = () => {
   return (
