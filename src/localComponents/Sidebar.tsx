@@ -8,16 +8,16 @@ import { IoLogOutOutline } from "react-icons/io5";
 
 const Sidebar = () => {
   return (
-    <aside className="sidebar flex flex-col justify-between fixed z-10 max-w-[250px] w-full h-screen p-4 pt-2 bg-[#F5F7F9]">
+    <aside className="sidebar flex flex-col justify-between fixed z-10 max-w-[250px] w-full h-screen p-4 pt-0 bg-white border-r border-[#EAEAEF] ">
       <div className="top">
-        <div className="pb-3 px-5 mx-auto border-b border-b-[#EAEAEF] mb-4">
-          <img src={logo} alt="" />
+        <div className="pb-2 pt-1 px-5 h-[56px] mx-auto border-b border-b-[#EAEAEF] mb-4">
+          <img src={logo} alt="" className="h-full mx-auto"/>
         </div>
         <ul className="flex flex-col gap-1">
           <li>
             <NavLink end to="/root" className="link-item ">
               <RxDashboard size={20} />
-              <span className="ml-2">Dashboard</span>
+              <span className="ml-2">Bosh sahifa</span>
             </NavLink>
           </li>
           <li>

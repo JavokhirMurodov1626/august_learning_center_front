@@ -6,9 +6,7 @@ const Root = () => {
     <>
       <Sidebar />
 
-      <div className="left-[250px] right-0 fixed z-10 bg-yellow-500 ">
-        <Header />
-      </div>
+      <Header />
 
       <main
         style={{
@@ -19,7 +17,7 @@ const Root = () => {
           height: "100vh",
           overflowY: "auto",
         }}
-        className="  bg-blue-500 "
+        className=" bg-[#F5F7F9]  "
       >
         <Outlet />
       </main>
