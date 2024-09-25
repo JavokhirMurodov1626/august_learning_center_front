@@ -23,7 +23,7 @@ const Login = () => {
         </h1> */}
         <img src={bg} alt="" className="" />
       </div>
-      <div className="login-right  w-[40%] bg-white p-6 flex flex-col mt-60">
+      <div className="login-right  w-[40%] bg-white p-6 flex flex-col justify-center">
         <div className="form-wrapper flex flex-col items-center">
           <div className=" text-3xl max-w-[200px] mb-3">
             <img src={logo} alt="" />
@@ -42,28 +42,34 @@ const Login = () => {
                 console.log(values);
               }}
             >
-              {({ values, handleChange, errors, touched }) => (
+              {({ values, handleChange, errors, touched, setFieldValue }) => (
                 <Form className="w-full max-w-[500px] ">
                   <div className="flex flex-col gap-4 mb-4">
                     <CustomInput
                       label="Login"
-                      type="text"
-                      name="login"
-                      value={values.login}
-                      onChange={handleChange}
-                      error={errors.login}
                       touched={touched.login}
-                      placeholder="Loginni kiriting..."
-                    />
+                      error={errors.login}
+                    >
+                      <PatternFormat
+                        name="login"
+                        placeholder="Telefon raqam (+998 ## ### ## ##)"
+                        format="+998 (##) ###-##-##"
+                        value={values.login}
+                        onValueChange={({ value }) => {
+                          setFieldValue("login", value);
+                        }}
+                        valueIsNumericString={true}
+                        className="flex w-full rounded-md border border-input bg-transparent px-3 py-2 shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7D97F4] disabled:cursor-not-allowed disabled:opacity-50"
+                      />
+                    </CustomInput>
 
-                    <CustomInput
+                    <PasswordInput
                       label="Parol"
-                      type="password"
-                      name="password"
+                      touched={touched.password}
+                      error={errors.password}
                       value={values.password}
                       onChange={handleChange}
-                      error={errors.password}
-                      touched={touched.password}
+                      name="password"
                       placeholder="Parolni kiriting..."
                     />
                   </div>

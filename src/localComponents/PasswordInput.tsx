@@ -36,9 +36,9 @@ const PasswordInput: React.FC<Props> = ({
           onClick={() => setShowPassword(!showPassword)}
         >
           {showPassword ? (
-            <AiOutlineEyeInvisible size={20} />
-          ) : (
             <AiOutlineEye size={20} />
+          ) : (
+            <AiOutlineEyeInvisible size={20} />
           )}
         </button>
       </div>
