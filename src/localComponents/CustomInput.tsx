@@ -1,14 +1,16 @@
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-
+import { cn } from "@/lib/utils";
 interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  error: string | undefined;
+  error: string | undefined | string[];
   touched: boolean | undefined;
   children?: React.ReactNode;
+  className?: string;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
+  className,
   label,
   error,
   touched,
@@ -16,7 +18,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
   ...props
 }) => {
   return (
-    <div className="grid w-full  items-center gap-1.5">
+    <div className={cn("grid w-full  items-center gap-1.5", className)}>
       <Label htmlFor="login">
         {label}
         {error && touched ? (

@@ -108,3 +108,39 @@
   font-style: normal;
   font-display: swap;
 }
+
+.input {
+  @apply flex w-full rounded-md border border-input bg-transparent px-3 py-2 shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7D97F4] disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.input-select .css-13cymwt-control,
+.css-16xfy0z-control {
+  border-color: #e6e7e9;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  @apply border border-input bg-transparent shadow-sm transition-colors rounded-md;
+}
+
+.input-select.disabled .css-16xfy0z-control {
+  @apply bg-[#F7F7F9] cursor-not-allowed;
+}
+
+.input-select .css-13cymwt-control:hover {
+  @apply border border-input;
+}
+
+.input-select .css-t3ipsp-control {
+  box-shadow: none;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  @apply border border-input rounded-md placeholder:text-muted-foreground ring-1 ring-[#7D97F4];
+}
+.input-select .css-t3ipsp-control:hover {
+  @apply border border-input  ring-[#7D97F4];
+}
+
+.input-select .css-1u9des2-indicatorSeparator {
+  display: none;
+}
